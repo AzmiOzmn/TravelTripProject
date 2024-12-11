@@ -1,4 +1,4 @@
-﻿
+﻿@model TravelTripProject.Models.Sınıflar.BlogYorum
 @{
     ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -38,38 +38,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
+                @foreach (var item in Model.Deger1)
+                {
+
+
                 <div class="single-grid">
-                    <img src="~/web2/images/post1.jpg" alt="" />
+                    <img src="@item.BlogImage" alt="" />
+                    <h2>@item.Baslik</h2>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       @item.Aciklama
 
                     </p>
                 </div>
-                <ul class="comment-list">
+                }
 
-                    <li>
-                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>Mehmet Yücedağ yorum yazacak...</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                @foreach (var item in Model.Deger2)
+                {
 
-
-                </ul>
 
                 <ul class="comment-list">
 
                     <li>
                         <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
                         <div class="desc">
-                            <p>Mehmet Yücedağ yorum yazacak...</p>
+                            <p><b>@item.KullaniciAdı :</b></p>
+                            <p>@item.Yorum</p>
+                            <br />
+                            <p>@item.Mail</p>
                         </div>
                         <div class="clearfix"></div>
                     </li>
 
-
+                    
                 </ul>
+                }
+                
+              
                 <div class="content-form">
                     <h3>Leave a comment</h3>
                     <form>

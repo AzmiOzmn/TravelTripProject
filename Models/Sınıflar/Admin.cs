@@ -14,5 +14,7 @@ namespace TravelTripProject.Models.Sınıflar
 
         public string Kullanici { get; set; }
         public string Sifre { get; set; }
+
+        
     }
 }

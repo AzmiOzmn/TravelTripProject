@@ -139,6 +139,7 @@
     <Compile Include="Models\Sınıflar\AdresBlog.cs" />
     <Compile Include="Models\Sınıflar\AnaSayfa.cs" />
     <Compile Include="Models\Sınıflar\Blog.cs" />
+    <Compile Include="Models\Sınıflar\BlogYorum.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
     <Compile Include="Models\Sınıflar\Hakkimizda.cs" />
     <Compile Include="Models\Sınıflar\iletisim.cs" />
