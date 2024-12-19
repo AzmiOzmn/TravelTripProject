@@ -18,16 +18,32 @@ namespace TravelTripProject.Controllers
             by.Deger1 = db.Blogs.ToList();
             by.Deger3 = db.Blogs
      .OrderByDescending(b => b.Tarih)
-     .Take(3) 
+     .Take(3)
      .ToList();
 
             return View(by);
-        }   
-        public ActionResult BlogDetay(int id) 
+        }
+        public ActionResult BlogDetay(int id)
         {
-            by.Deger1 = db.Blogs.Where(x=> x.ID == id).ToList();
-            by.Deger2 = db.Yorumlars.Where(x=> x.Blogid == id).ToList();
+            by.Deger1 = db.Blogs.Where(x => x.ID == id).ToList();
+            by.Deger2 = db.Yorumlars.Where(x => x.Blogid == id).ToList();
             return View(by);
+        }
+
+
+     
+        public PartialViewResult YorumYap(int id)
+        {
+            ViewBag.deger = id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult YorumYap(Yorumlar y)
+        {
+            db.Yorumlars.Add(y);
+            db.SaveChanges();
+            return PartialView();
         }
     }
 }

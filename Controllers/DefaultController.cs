@@ -25,18 +25,18 @@ namespace TravelTripProject.Controllers
 
         public PartialViewResult Partial1()
         {
-            var partial1 = db.Blogs.OrderByDescending(x=>x.ID).Take(2).ToList();    
+            var partial1 = db.Blogs.OrderByDescending(x => x.ID).Take(2).ToList();
             return PartialView(partial1);
         }
         public PartialViewResult Partial2()
         {
-            var partial2 = db.Blogs.Where(x => x.ID==1).ToList();
+            var partial2 = db.Blogs.Where(x => x.ID == 1).ToList();
             return PartialView(partial2);
         }
         public PartialViewResult Partial3()
         {
-            var partial3 = db.Blogs.ToList();
-            return PartialView(partial3); 
+            var partial3 = db.Blogs.Take(10).ToList();
+            return PartialView(partial3);
         }
 
         public PartialViewResult Partial4()
@@ -47,8 +47,10 @@ namespace TravelTripProject.Controllers
 
         public PartialViewResult Partial5()
         {
-            var partial5 = db.Blogs.Take(3).OrderByDescending(x=>x.ID).ToList();
+            var partial5 = db.Blogs.Take(3).OrderByDescending(x => x.ID).ToList();
             return PartialView(partial5);
         }
+
     }
-}
+
+    }
