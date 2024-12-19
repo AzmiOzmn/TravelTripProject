@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,8 +21,9 @@ namespace TravelTripProject.Controllers
      .OrderByDescending(b => b.Tarih)
      .Take(3)
      .ToList();
-
+            by.Deger2 = db.Yorumlars.Take(3).ToList();
             return View(by);
+           
         }
         public ActionResult BlogDetay(int id)
         {
